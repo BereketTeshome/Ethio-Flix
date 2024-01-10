@@ -16,9 +16,12 @@ const UpdateUser = ({ toggleTheme }) => {
 
   const handleUpdate = async () => {
     try {
-      await axios.patch(`http://localhost:3001/api/user/update/${userId}`, {
-        password,
-      });
+      await axios.patch(
+        `https://ethio-flix-server.vercel.app/api/user/update/${userId}`,
+        {
+          password,
+        }
+      );
       navigate("/");
       setTimeout(() => {
         toast.success("PASSWORD UPDATED!", {

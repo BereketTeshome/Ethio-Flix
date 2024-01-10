@@ -19,7 +19,7 @@ const Favorites = ({ toggleTheme }) => {
       const fetchFavorites = async () => {
         setLoading(true);
         const res = await axios.get(
-          `http://localhost:3001/api/favorites/${userId}`
+          `https://ethio-flix-server.vercel.app/api/favorites/${userId}`
         );
         setFavoritesInfo(res.data.favorite);
         setLoading(false);
@@ -31,7 +31,9 @@ const Favorites = ({ toggleTheme }) => {
   }, []);
 
   const handleFavRemove = async (_id) => {
-    await axios.delete(`http://localhost:3001/api/favorite/${_id}`);
+    await axios.delete(
+      `https://ethio-flix-server.vercel.app/api/favorite/${_id}`
+    );
     window.location.reload();
   };
 

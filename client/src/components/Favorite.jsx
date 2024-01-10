@@ -24,7 +24,7 @@ const Favorite = ({ movieDetail }) => {
     try {
       const fetchFavorites = async () => {
         const res = await axios.get(
-          `http://localhost:3001/api/favorites/${userId}`
+          `https://ethio-flix-server.vercel.app/api/favorites/${userId}`
         );
         setFavoritesInfo(res.data.favorite);
         liked.includes(compareMovieId) && setFav(true);
@@ -72,7 +72,7 @@ const Favorite = ({ movieDetail }) => {
         }, 1);
 
       token && setFav((prev) => !prev);
-      await axios.post("http://localhost:3001/api/favorite", {
+      await axios.post("https://ethio-flix-server.vercel.app/api/favorite", {
         movieId,
         movieImage,
         postedBy,

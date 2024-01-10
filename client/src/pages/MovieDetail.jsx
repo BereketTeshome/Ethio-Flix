@@ -47,7 +47,7 @@ const MovieDetail = ({ toggleTheme }) => {
     try {
       const fetchReview = async () => {
         const res = await axios.get(
-          `http://localhost:3001/api/review/${movieId}`
+          `https://ethio-flix-server.vercel.app/api/review/${movieId}`
         );
         setReviewInfo(res.data.review);
       };
@@ -58,7 +58,9 @@ const MovieDetail = ({ toggleTheme }) => {
   }, []);
 
   const handleRemove = async (_id) => {
-    await axios.delete(`http://localhost:3001/api/review/${_id}`);
+    await axios.delete(
+      `https://ethio-flix-server.vercel.app/api/review/${_id}`
+    );
     window.location.reload();
   };
 
@@ -79,7 +81,7 @@ const MovieDetail = ({ toggleTheme }) => {
         }, 1);
 
       token &&
-        (await axios.post("http://localhost:3001/api/review", {
+        (await axios.post("https://ethio-flix-server.vercel.app/api/review", {
           review,
           movieId,
           movieImage,

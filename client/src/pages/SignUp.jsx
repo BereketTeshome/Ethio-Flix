@@ -16,11 +16,14 @@ const SignUp = () => {
   const handleRegister = async (e) => {
     try {
       e.preventDefault();
-      const res = await axios.post("http://localhost:3001/api/user/register", {
-        username,
-        email,
-        password,
-      });
+      const res = await axios.post(
+        "https://ethio-flix-server.vercel.app/api/user/register",
+        {
+          username,
+          email,
+          password,
+        }
+      );
 
       if (!res.data.error) {
         cookie.set("token", res.data.token);

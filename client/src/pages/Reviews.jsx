@@ -19,7 +19,7 @@ const Reviews = ({ toggleTheme }) => {
       const fetchReviews = async () => {
         setLoading(true);
         const res = await axios.get(
-          `http://localhost:3001/api/reviews/${userId}`
+          `https://ethio-flix-server.vercel.app/api/reviews/${userId}`
         );
         setReviewsInfo(res.data.review);
         setLoading(false);
@@ -31,7 +31,9 @@ const Reviews = ({ toggleTheme }) => {
   }, []);
 
   const handleRemove = async (_id) => {
-    await axios.delete(`http://localhost:3001/api/review/${_id}`);
+    await axios.delete(
+      `https://ethio-flix-server.vercel.app/api/review/${_id}`
+    );
     window.location.reload();
   };
 
