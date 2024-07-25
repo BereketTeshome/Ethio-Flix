@@ -38,7 +38,7 @@ const SignIn = () => {
     <div className="login-container">
       <div className="login-wrapper">
         <div className="login-left">
-          <img src="../../public/sm.jpg" alt="login-image" />
+          <img src="/sm.jpg" alt="login-image" />
         </div>
         <div className="login-right">
           <h2 style={{ marginBottom: "80px" }}>Login</h2>

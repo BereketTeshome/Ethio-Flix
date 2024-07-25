@@ -110,7 +110,6 @@ button:disabled {
   transition: 0.4s;
   color: #000;
   width: 100%;
-  padding: 10px 0;
   cursor: pointer;
   border-bottom: 1px solid #99999969;
 }
